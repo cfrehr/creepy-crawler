@@ -19,22 +19,8 @@
 
       "searchKey.txt"
 
-5) Add dependencies to "pom.xml"
-      <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.json/json -->
-        <dependency>
-          <groupId>org.json</groupId>
-          <artifactId>json</artifactId>
-          <version>20160810</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-          <groupId>org.seleniumhq.selenium</groupId>
-          <artifactId>selenium-java</artifactId>
-          <version>2.53.1</version>
-        </dependency>
-      </dependencies>
-
+5) Add dependencies to from "crawlerPom.xml" to "pom.xml"
+      
 6) (Optional) Toggle arguments in "keywords.txt"
 
 7) Run application, view output in "newJobs.txt"
