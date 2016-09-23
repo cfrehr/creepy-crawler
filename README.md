@@ -19,7 +19,7 @@
 
       "searchKey.txt"
 
-5) Add dependencies to from "crawlerPom.xml" to "pom.xml"
+5) Insert dependencies to from "crawlerDependencies.txt" into "pom.xml" (paste just before "</project>")
       
 6) (Optional) Toggle filter arguments in "keywords.txt"
 
