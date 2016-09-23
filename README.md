@@ -21,7 +21,7 @@
 
 5) Add dependencies to from "crawlerPom.xml" to "pom.xml"
       
-6) (Optional) Toggle arguments in "keywords.txt"
+6) (Optional) Toggle filter arguments in "keywords.txt"
 
 7) Run application, view output in "newJobs.txt"
       
