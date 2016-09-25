@@ -36,7 +36,7 @@ import java.io.PrintWriter;
 ///			2) Fix JSONFilter.extractJobs() "arrays" case to match "objects" case
 ///         3) Print to doc, instead of text file
 ///         4) Parse HTML from description field
-///         5) Clean <div> and <span> tags from HTML in descriptions? Will need to know a bit about html
+///         5) Clean HTML element tags from descriptions
 
 
 public class CreepyCrawler {
