@@ -3,10 +3,8 @@
 
 # How to build and test yourself
 
-1) Download CreepyCrawler repository as zip
+1) Import repository in Eclipse
 
-2) Import project in Eclipse
+2) Run main class CreepyCrawler.java
 
-3) Run CreepyCrawler.java
-
-4) Refresh project and view output file newJobs.txt
+3) Refresh project and view opportunities in newJobs.txt
