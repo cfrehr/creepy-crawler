@@ -3,25 +3,10 @@
 
 # How to build and test yourself
 
-1) Create new simple Maven project in Eclipse (packaging type = jar)
+1) Download CreepyCrawler repository as zip
 
-2) Add "CreepyCrawler.java" to /src/main/java
+2) Import project in Eclipse
 
-3) Add "creepy-crawler-0.0.1.jar" to build path
+3) Run CreepyCrawler.java
 
-4) Add input text files to /src/main/resources
-
-      "companies.txt"
-
-      "jobs.txt"
-
-      "keywords.txt"
-
-      "searchKey.txt"
-
-5) Insert dependencies to from "crawlerDependencies.txt" into "pom.xml" (paste just before "</project>")
-      
-6) (Optional) Toggle filter arguments in "keywords.txt"
-
-7) Run application, view output in "newJobs.txt"
-      
+4) Refresh project and view output file newJobs.txt
