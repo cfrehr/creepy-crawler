@@ -1,0 +1,12 @@
+###
+### companies.txt
+###
+###   About:
+###     This file serves as...
+###
+###
+$$$ START
+Civis analytics
+Groupon
+Pandora
+$$$ STOP

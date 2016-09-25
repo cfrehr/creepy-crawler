@@ -1,0 +1,63 @@
+###
+### keywords.txt
+###
+###   About:
+###     The keywords.txt is an instruction set for the job filter. A Keywords object is built from this file and passed to
+###     the Filter object, where keywords will be passed as parameters to (1) guiding job retrieval, and (2) scoring jobs.
+###     The keywords.txt file gives you the ability to fine-tune your job search, by ruling out jobs that do or don't
+###     contain the keywords you are looking for. The ret....
+###
+###   Section Notations:
+###     ##          new keyword class
+###     #           new keyword match type
+###   Matching Operations (order:
+###     # IN        include jobs only with a keyword match
+###     # OUT       exclude any job with a keyword match
+###                     - IN/OUT are best used with only POSITION and LOCATION keyword classes to avoid over-specification
+###                     - in any query of an individual class or combination of classes, a single OUT will take 
+###                       precedence over all INs
+###                     - in any query combination, IN must be return true for at least one keyword in ALL classes
+###                       in order to return result
+###     # POS       increase job upScore (+1)
+###     # NEG       increase job downScore (+1)
+###						- POS/NEG are to be used by only the DESCRIPTION keyword class
+###   Keyword Notations:
+###     k1          single keyword
+###                     - generalize keyword by shortening its form (e.g. k1="stat" will match with any superstring,
+###                       such as "stats", "statistics", or "thermostat")
+###     k1,k2,...   keyword tuple (separated by ",")
+###                     - useful for words with multiple forms (e.g. "PhD,Ph.D.")
+###                     - inclusive OR operation: keyword is scored if any individual keyword from tuple is matched
+###                     - scoring occurs only once per line, regardless of multiple keyword matches in tuple or job ad
+###
+###
+$$$ START
+## POSITION
+# IN
+analyst
+# OUT
+senior,sr
+## DESCRIPTION
+# POS
+bachelor
+computer science
+engineering
+industrial engineering
+java
+machine learning
+operations research
+optimiz
+statistic
+# NEG
+masters
+phd,ph.d.
+## LOCATION
+# IN
+chicago
+san francisco
+palo alto
+austin
+oakland
+# OUT
+charleston
+$$$ STOP

@@ -1,0 +1,60 @@
+###
+### searchKey.txt
+###
+### About:
+###   The search key offers a means to encode a variety of schemas that may be used to...
+###
+### JSON Schema:
+###
+###   Syntax:
+###     [(x:y)...]   create array
+###     {(x:y)...}   create object
+###     <(x:z)a:b>   create Job field    x (int, int[], String, or String[]), y (String, dataType), z (String or String[], )
+###                     - x (int, int[], String, or String[]) 
+###                         parameter x reveals what type of data structure the new data structure is being pulled from.
+###                         int x >= 0 : references an index of parent array
+###                         String x   : references a property of parent object
+###                         x = -1     : references all indices of parent array or all properties of parent object
+###                     - y (String, dataType) 
+###                         parameter y is a String representation of the data type to be created from parameter x
+###                         it is attached to.
+###                         String y = "integer" : creates integer for x(s)
+###                         String y = "string"  : creates string for x(s)
+###                     - z (String or String[])
+###                         parameter z is the String[] representation of the data types to be created for parameters x
+###                     - a (String or String[])
+###                         parameter a is the String representation of the job field name to be stored; e.g. "position"
+###                     - b (String or String[])
+###                         parameter b is a String representation of the data type to be created from parameter a, e.g. "string"
+###     :            attach data type to parameter
+###                     - semicolon allows a parameter to be instantiated as a data type from its String representation
+###                     - every new object, array, or field must begin with (x:y)
+###     ,            list items
+###                     - comma designates multiples, be it arrays, objects, fields, or combinations
+###                     - commas can also designate multiple parameters
+###     *            create Job object
+###                     - asterisk marks the point in parsing at which the json array or object representing a Job
+###                       has been reached. Its presence is vital for Filter.extractJobs() functionality. 
+###                     - An asterisk must be placed directly before a open brace '{', bracket '[', or angle bracket '<'.
+###                     - To fully understand asterisk placement, first learn the Filter.extractJobs() method.
+###
+###   Example:
+###     Actual JSON Schema
+###
+###     Encoded JSON Schema
+###
+###   Links:
+###     JSON viewer - http://www.jsoneditoronline.org/
+###
+###   To-Do: HTML:
+###     Read: http://analystcave.com/web-scraping-tutorial/
+###     Parse example for Raise (view-source:https://www.raise.com/careers) using formatter (http://www.freeformatter.com/html-formatter.html#ad-output)
+###			XPath Query: /html/body/div[6]/div[2]/div[1]/ahref[ALL]
+###     Grubhub: Grubhub~~~view-source:https://jobs.jobvite.com/grubhub/jobs?nl=1&nl=1
+###
+###
+$$$ START
+Civis Analytics~~~https://api.lever.co/v0/postings/civisanalytics?mode=json~~~https://jobs.lever.co/civisanalytics/~~~json~~~*{(-1:integer)<(id:string)id:string>,<(id:string)applyUrlExtension:string>,<(text:string)position:string>,<(description:string)description:string>,[(lists:string){(-1:integer)<(text:string)description:string>,<(content:string)description:string>}],{(categories:string)<(location:string)location:string>}}
+Groupon~~~https://jobs.groupon.com/careers_front_api/v1/location/jobs/chicago~~~https://jobs.groupon.com/jobs/~~~json~~~[(jobs:string)*{(-1:integer)<(description:string)description:string>,<(recruiterEmail:string)contact:string>,<(id:string)id:string>,<(id:string)applyUrlExtension:string>,<(title:string)position:string>,[(locations:string){(0:integer)<(city:string)location:string>}]}]
+Pandora~~~http://pandora.com/static/careers/jobvite.js~~~http://pandora.com/careers/position?id=~~~json~~~[(jobs:string)*{(-1:integer)<(city:string)location:string>,<(description:string)description:string>,<(title:string)position:string>,<(recruiter:string)contact:string>,<(id:string)id:string>,<(id:string)applyUrlExtension:string>}]
+$$$ STOP
